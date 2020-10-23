@@ -8,7 +8,7 @@ var firebaseConfig = {
     messagingSenderId: "997220109448",
     appId: "1:997220109448:web:9150deac1f6b8ee299233d"
   };
- // Initialize Firebase
+ 
  var app = firebase.initializeApp(firebaseConfig);
          db = firebase.firestore(app);
          firebase.firestore().settings({
@@ -21,8 +21,7 @@ var firebaseConfig = {
         const leaderBoard = document.querySelector("#leaderBoard");
         const score = document.querySelector("#demo2");
 
-// real-time listener
-//snapshot an obj that represents your doc ..grab the data i t contains by calling data on it
+
 db.collection('players').orderBy('score', "desc").onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
         changes.forEach(change => {
@@ -53,7 +52,7 @@ function display(){
     document.getElementById('table').style.display = "block";
 }
 
-// saving data
+
 submitPlayers.addEventListener("click",function(){
     if( document.getElementById("name").value != ''){
     //e.preventDefault();
