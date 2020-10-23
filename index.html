@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+        
+         <link rel="stylesheet" href="my.css">
+         <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+
+         <script src="game.js"></script>
+    </head>
+
+    <body>
+    <br>
+    <h1>My Mini Game!</h1> <br>
+
+        <h3>Enter your name:</h3>
+        <input id=name name="name" type="text" size="30"> <br><br>
+
+    <h3>Choose difficulty level:</h3>
+        <button id="easy"   class="level"  value="easy"   onclick="StartGame('easy')"> Easy </button>
+        <button id="medium" class="level"  value="medium" onclick="StartGame('medium')"> Medium </button>
+        <button id="hard"   class="level"  value="hard"   onclick="StartGame('hard')"> Hard </button><br><br>
+
+
+        <p style="font-size:25px; display:inline-block"> Current Color: </p>
+        <p id="demo1"> </p> <br> 
+
+        <p style="font-size:25px;display:inline-block" id="scoretext"> Your Score: </p>
+        <input  id="demo2"  name="score" type="number"  > </input>  <br> <br>
+
+        <button class="greenbtn" onclick="game('Green')" > </button>
+        <button class="yellowbtn" onclick="game('Yellow')" > </button>
+        <button class="redbtn" onclick="game('Red')" > </button> <br>
+        <button class="bluebtn" onclick="game('Blue')" > </button> 
+        <button class="whitebtn" onclick="game('White')" > </button> 
+        <button class="purpletbtn" onclick="game('Purple')" > </button> <br><br>
+
+
+        <button id="submit_btn" onclick="display()"> Check your score on the leader board!!  </button> <br> <br>
+
+        <div id="results">
+            <table id="table">
+                <th>Leader Board!!</th>
+                <tr>
+                    <td id="leaderBoard"></td>
+                </tr>
+            </table>
+        </div>
+
+
+    <!-- database save -->
+    <script src="./game2.js"></script>
+    </body>
+     
+
+</html>
